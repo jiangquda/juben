@@ -1,0 +1,1 @@
+npm run shuzhidown && EGG_SERVER_ENV=shuzhi EGG_SCHEDULE=true npm run shuzhiup

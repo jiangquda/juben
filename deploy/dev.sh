@@ -1,0 +1,1 @@
+rsync -av /Volumes/code/work/maotai/maotai_api --exclude=node_modules --exclude=.git --exclude=logs  -e 'ssh -p 54322' root@183.131.147.91:/usr/jjhgame/maotai_api

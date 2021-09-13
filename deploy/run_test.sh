@@ -1,0 +1,1 @@
+npm stop && EGG_SERVER_ENV=test EGG_SCHEDULE=true npm start

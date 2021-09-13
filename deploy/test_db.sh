@@ -1,0 +1,1 @@
+NODE_ENV=test npx sequelize db:migrate

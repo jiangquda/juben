@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "yueju",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Xk4ise&nCFH6L>26aX",
+    "database": "maotai",
+    "host": "183.131.147.91",
+    "dialect": "mysql"
+  },
+  "shuzhi": {
+    "username": "root",
+    "password": "123",
+    "database": "maotai_shuzhi",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Xk4ise&nCFH6L>26aX",
+    "database": "maotai",
+    "host": "183.131.147.91",
+    "dialect": "mysql"
+  }
+}

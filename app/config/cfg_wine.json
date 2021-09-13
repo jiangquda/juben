@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "group": "1",
+        "group_name": "茅台",
+        "short_name": "茅台",
+        "name": "飞天茅台",
+        "level": "1",
+        "cost": "1",
+        "unlock": "1",
+        "make_material": "{1:5000,2:5000}",
+        "up_material": "{}",
+        "make_probability": "",
+        "up_probability": "",
+        "reward": "",
+        "created_at": "8/3/2021 17:45:50",
+        "updated_at": "8/3/2021 17:45:54",
+        "soft_deleted": "0"
+    }
+]

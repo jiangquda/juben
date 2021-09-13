@@ -1,0 +1,75 @@
+{
+  "name": "yueju",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "acorn": "^8.0.5",
+    "await-stream-ready": "^1.0.1",
+    "decimal.js": "^10.3.1",
+    "egg": "^2.15.1",
+    "egg-bcrypt": "^1.1.0",
+    "egg-bull": "^1.0.0",
+    "egg-cors": "^2.2.3",
+    "egg-jwt": "^3.1.7",
+    "egg-redis": "^2.4.0",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize": "^6.0.0",
+    "egg-session-redis": "^2.1.0",
+    "egg-socket.io": "^4.1.6",
+    "egg-tx": "^1.0.4",
+    "egg-validate": "^2.0.2",
+    "js-shortid": "^0.1.1",
+    "lodash": "^4.17.21",
+    "mocha": "^9.0.2",
+    "moment": "^2.29.1",
+    "mysql2": "^2.2.5",
+    "mz-modules": "^2.1.0",
+    "silly-datetime": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.10",
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0",
+    "sequelize-cli": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-yueju --ignore-stderr --sticky",
+    "stop": "egg-scripts stop --title=egg-server-yueju",
+    "shuzhiup": "egg-scripts start --title=egg-server-yueju-shuzhi --port=8081 --ignore-stderr --sticky",
+    "shuzhidown": "egg-scripts stop --title=egg-server-yueju-shuzhi",
+    "dev": "egg-bin dev --sticky",
+    "shuzhi": "egg-bin dev --env=shuzhi --port 8081",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "migrate:new": "egg-sequelize migration:create",
+    "migrate:up": "egg-sequelize db:migrate",
+    "migrate:down": "egg-sequelize db:migrate:undo",
+    "migrate:down:all": "egg-sequelize db:migrate:undo:all"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT"
+}

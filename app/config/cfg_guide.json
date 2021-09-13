@@ -1,0 +1,164 @@
+[
+        {
+            "id": "1",
+            "guide_last_group": "0",
+            "guide_group": "1",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "2",
+            "guide_last_group": "1",
+            "guide_group": "2",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "3",
+            "guide_last_group": "1",
+            "guide_group": "2",
+            "guide_step": "2",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "4",
+            "guide_last_group": "1",
+            "guide_group": "2",
+            "guide_step": "3",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "5",
+            "guide_last_group": "2",
+            "guide_group": "3",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "6",
+            "guide_last_group": "3",
+            "guide_group": "4",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "7",
+            "guide_last_group": "4",
+            "guide_group": "5",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "8",
+            "guide_last_group": "5",
+            "guide_group": "6",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "9",
+            "guide_last_group": "6",
+            "guide_group": "7",
+            "guide_step": "1",
+            "guide_reward": "[\"3|0|5000|0|0\"]",
+            "action": "firstMaotaiAct",
+            "guideType": "1"
+        },
+        {
+            "id": "10",
+            "guide_last_group": "7",
+            "guide_group": "8",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "11",
+            "guide_last_group": "8",
+            "guide_group": "9",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "12",
+            "guide_last_group": "9",
+            "guide_group": "10",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "13",
+            "guide_last_group": "10",
+            "guide_group": "11",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "14",
+            "guide_last_group": "11",
+            "guide_group": "12",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "15",
+            "guide_last_group": "11",
+            "guide_group": "12",
+            "guide_step": "2",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "16",
+            "guide_last_group": "12",
+            "guide_group": "13",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "1"
+        },
+        {
+            "id": "101",
+            "guide_last_group": "0",
+            "guide_group": "101",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "2"
+        },
+        {
+            "id": "102",
+            "guide_last_group": "101",
+            "guide_group": "102",
+            "guide_step": "1",
+            "guide_reward": "[]",
+            "action": "",
+            "guideType": "2"
+        }
+]
