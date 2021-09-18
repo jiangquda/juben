@@ -43,8 +43,6 @@ const RES_MAP = {
 
     AD_ERROR:{code:400000,message:"广告未完成",data:null}
 
-   
-
   };
   
   module.exports = {

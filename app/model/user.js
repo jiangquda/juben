@@ -21,19 +21,21 @@ module.exports = app => {
         allowNull: false,
         primaryKey: true
       },
-      // openId: {
-      //   type: STRING(64),
-      //   allowNull: false
-      // },
+      openId: {
+        type: STRING(64),
+        allowNull: false,
+        defaultValue: ''
+      },
       user_name: {
         type: STRING(32),
         allowNull: false,
         defaultValue: ''
       },
-      // appId: {
-      //   type: STRING(32),
-      //   allowNull: false
-      // },
+      appId: {
+        type: STRING(32),
+        allowNull: false,
+        defaultValue: ''
+      },
       photo: {
         type: STRING(255),
         allowNull: false,
@@ -106,7 +108,8 @@ module.exports = app => {
       },
       create_dt: {
         type: DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: NOW
       }
     },
     {

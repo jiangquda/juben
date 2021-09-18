@@ -4,16 +4,18 @@ const {RES_MAP, mapToResp} = require('../respcode');
 const {ASSETS_TYPE,CFG_LEVEL,SKILL_TYPE,CFG_SKILL} = require('../config/const')
 const USER_INFO_EXPIRES = 60 * 60 * 24 * 7;
 const _ = require('lodash');
+const shortid = require('js-shortid')
+
 class UserService extends Service {
 
   async signToDb(userInfo) {
     try {
       //let password = crypto.createHash('md5').update(userInfo.password).digest('hex')
-      let password = this.getMd5Data(userInfo.password)
+      //let password = this.getMd5Data(userInfo.password)
       let now = new Date()
       await this.ctx.model.User.create({
-        user_name:userInfo.username,
-        password:password,
+        openId:userInfo.openId,
+        user_name:this.getUserName(),
         create_dt:now,
         modify_dt:now,
       });
@@ -23,7 +25,7 @@ class UserService extends Service {
     }
 
     const [user] = await this.ctx.model.User.findAll({
-      where: {user_name: userInfo.username},
+      where: {openId: userInfo.openId},
       limit: 1,
     });
     if (!user) {
@@ -226,9 +228,10 @@ class UserService extends Service {
     }
 
     const result = {
+      openId:user.openId,
       id: user.id,
       user_name: user.user_name,
-      uuid: user.uuid,
+      
     };
     const redisClient = this.app.redis.get('cache');
     const key = `HASH:USER:INFO:${uid}`;
@@ -345,6 +348,12 @@ class UserService extends Service {
     let count = 0/0
     return mapToResp(RES_MAP.SUCCESS, userInfo);
 
+  }
+
+  //随机游客名称
+  getUserName(){
+    let id = shortid.gen();
+    return "游客"+id;
   }
 
 }

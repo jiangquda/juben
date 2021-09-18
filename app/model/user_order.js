@@ -34,22 +34,44 @@ module.exports = app => {
       },
       order_time: {
         type: DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: NOW
+      },
+      user_state: {
+        type: STRING(1),
+        allowNull: false,
+        defaultValue: "0"
+      },
+      play_state: {
+        type: STRING(1),
+        allowNull: false,
+        defaultValue: "0"
       },
       start_time: {
         type: DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: ""
       },
       end_time: {
         type: DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: ""
       },
       order_remark: {
         type: STRING(255),
         allowNull: false,
         defaultValue: ""
+      },
+      order_price:{
+        type: DECIMAL(10,2),
+        allowNull: false,
+        defaultValue: 0.00
+      },
+      order_money:{
+        type: DECIMAL(10,2),
+        allowNull: false,
+        defaultValue: 0.00
       }
-
 
 
     },

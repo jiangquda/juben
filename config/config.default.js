@@ -18,26 +18,7 @@ module.exports = appInfo => {
   // add your middleware config here
   // 加载 errorHandler 中间件
   config.middleware = [ 'errorHandler' ]
-
-  // config.sequelize = {
-  //   dialect: 'mysql',
-  //   host: '183.131.147.91',
-  //   port: 3306,
-  //   database: 'maotai_dev',
-  //   username: 'root', // 数据库用户名
-  //   password: 'Xk4ise&nCFH6L>26aX', // 数据库密码
-  //   timezone: '+08:00' ,// 保存为本地时区
-  //   dialectOptions: {
-  //     dateStrings: true,
-  //     typeCast(field, next) {
-  //       // for reading from database
-  //       if (field.type === "DATETIME") {
-  //         return field.string();
-  //       }
-  //       return next();
-  //     }
-  //   }
-  // };
+  
   config.sequelize = {
     dialect: 'mysql',
     host: '127.0.0.1',
@@ -99,20 +80,6 @@ module.exports = appInfo => {
      agent: false
  };
   config.redis = {
-    // clients: {
-    //   cache: {
-    //         port: 6379,          // Redis port
-    //         host: '183.131.147.91',   // Redis host
-    //         password: '',
-    //         db: 1, // 数据库
-    //     },
-    //   session: {
-    //         port: 6379,          // Redis port
-    //         host: '183.131.147.91',   // Redis host
-    //         password: '',
-    //         db: 2, // 数据库
-    //     },
-    // }
     clients: {
       cache: {
             port: 6379,          // Redis port
@@ -168,12 +135,6 @@ module.exports = appInfo => {
       },
     },
 
-    // redis: {
-    //   port: 6379,          // Redis port
-    //   host: '183.131.147.91',   // Redis host
-    //   // password: '',c
-    //   db: 3, // 数据库
-    // },
     redis: {
       port: 6379,          // Redis port
       host: '127.0.0.1',   // Redis host

@@ -10,33 +10,39 @@ class UserController extends Controller {
    */
   async login() {
     const { ctx,app } = this;
-    const { username, password } = _.defaults(ctx.request.body, {
-      username: '',
-      password: '',
+    const { code } = _.defaults(ctx.request.body, {
+      code: '',
     });
+    if(code == ''){
+      return mapToResp(RES_MAP.UNKNOWN_ERROR, '参数异常');
+    }
+    //调用微信登录，获取openId
+    let openId = 'qwerasdfrgrgwe214312e12';
+    
     let user = await ctx.model.User.findOne({
-      where: { user_name:username }
+      where: { openId:openId }
     });
 
     if (!user) {
       const signResult = await ctx.service.user.signToDb({
-        username, password
+        openId
       });
 
       if (signResult.code) {
         ctx.body = signResult;
         return;
       }
-      //await ctx.service.activity.firstMaotaiAct(signResult.data.id);
       user = _.get(signResult, 'data', {});
-    }else{
-      if (user.password != crypto.createHash('md5').update(password).digest('hex')){
-        ctx.body = mapToResp(RES_MAP.LOGIN_ERROR,{});
-        return;
-      }
     }
+    // else{
+    //   if (user.password != crypto.createHash('md5').update(password).digest('hex')){
+    //     ctx.body = mapToResp(RES_MAP.LOGIN_ERROR,{});
+    //     return;
+    //   }
+    // }
     //await ctx.service.user.checkOfflineReward(user.id)
     ctx.session.sid = user.id;
+    ctx.session.openId = user.openId;
     ctx.session.maxAge = 30 * 24 * 60 * 60 * 1000;   // 存储30天
     let key = `LOGIN:SESSION:${user.id}`
     let newkey = ctx.session._sessCtx.externalKey
@@ -49,13 +55,14 @@ class UserController extends Controller {
         await sessionClient.del(lastkey)
       }
     }
-    
     //app.bull.get('UserQueue').add({ action: 'update_login',uid:user.id });
     ctx.body = mapToResp(RES_MAP.SUCCESS, {
         uid: user.id || '',
+        openId: user.openId,
         uuid: user.uuid || '',
         server_time: Math.floor(new Date().getTime() / 1000)
     });
+    ctx.body = mapToResp(RES_MAP.SUCCESS, user);
   }
 
 
@@ -100,6 +107,25 @@ class UserController extends Controller {
 
     ctx.body = await ctx.service.user.updateUserExtra(sid,name)
   }
+
+
+
+
+  //修改数据
+  async updateUser(){
+
+  }
+
+  //确认接单时间
+  async confirmWorkTime(){
+
+
+
+  }
+
+  
+
+
 
 }
 
